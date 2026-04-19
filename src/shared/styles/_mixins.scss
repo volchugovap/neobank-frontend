@@ -1,0 +1,35 @@
+@mixin global-padding-desktop {
+  padding: 0 214px;
+}
+
+@mixin global-padding-tablet {
+}
+
+@mixin global-padding-mobile {
+}
+
+@mixin w-h-padding-radius-bgc(
+  $width,
+  $height,
+  $padding,
+  $border-radius,
+  $background-color
+) {
+  width: $width;
+  height: $height;
+  padding: $padding;
+  border-radius: $border-radius;
+  background-color: $background-color;
+}
+
+@mixin text_size-height-word-letter(
+  $font-size,
+  $line-height,
+  $word-spacing,
+  $letter-spacing
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  word-spacing: $word-spacing;
+  letter-spacing: $letter-spacing;
+}

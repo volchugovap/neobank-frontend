@@ -1,0 +1,26 @@
+@use "@/shared/styles/fonts";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.section-services {
+  gap: 8px;
+  display: flex;
+  margin-top: 48px;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 500;
+    color: variables.$black-1c1c1c;
+    @include mixins.text_size-height-word-letter(30px, 50px, 5px, 0%);
+  }
+
+  &__description {
+    color: variables.$black-1c1c1e;
+    @include mixins.text_size-height-word-letter(16px, 50px, 5px, 0%);
+  }
+
+  &__image {
+    margin-top: 40px;
+  }
+}

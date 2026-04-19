@@ -1,0 +1,65 @@
+@use "@/shared/styles/variables";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/fonts";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 96px 214px 92px;
+  background-color: variables.$white-e7e7e7;
+
+  &__top-container {
+    display: flex;
+    align-items: start;
+    margin-bottom: 24px;
+    justify-content: space-between;
+  }
+
+  &__address {
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+
+    &-number {
+      font-style: normal;
+      font-family: "Ubuntu-bold", sans-serif;
+      @include mixins.text_size-height-word-letter(30px, 147%, 0, 0%);
+    }
+
+    &-email {
+      font-style: normal;
+      color: variables.$gray-2d3748;
+      @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+    }
+  }
+
+  &__nav {
+    margin-bottom: 28px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    margin-top: 8px;
+    margin-right: 32px;
+    @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+  }
+
+  &__nav-link {
+    transition: color 0.35s ease;
+
+    &:hover {
+      color: variables.$yellow-b2a35f;
+    }
+  }
+
+  &__description {
+    padding-top: 32px;
+    color: variables.$gray-2d3748;
+    border-top: 2px solid variables.$white-fafafa;
+    @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+  }
+}

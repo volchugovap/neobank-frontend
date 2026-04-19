@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Ubuntu-bold";
+  src:
+    local("Ubuntu-Bold"),
+    url("/assets/fonts/Ubuntu-Bold.woff2") format("woff2"),
+    url("/assets/fonts/Ubuntu-Bold.woff") format("woff"),
+    url("/assets/fonts/Ubuntu-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu-Medium";
+  src:
+    local("Ubuntu-Medium"),
+    url("/assets/fonts/Ubuntu-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Ubuntu-Medium.woff") format("woff"),
+    url("/assets/fonts/Ubuntu-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu-Regular";
+  src:
+    local("Ubuntu-Regular"),
+    url("/assets/fonts/Ubuntu-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Ubuntu-Regular.woff") format("woff"),
+    url("/assets/fonts/Ubuntu-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NunitoSans-Regular";
+  src:
+    local("NunitoSans-Regular"),
+    url("/assets/fonts/NunitoSans-Regular.woff2") format("woff2"),
+    url("/assets/fonts/NunitoSans-Regular.woff") format("woff"),
+    url("/assets/fonts/NunitoSans-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik-Medium";
+  src:
+    local("Rubik-Medium"),
+    url("/assets/fonts/Rubik-Medium.woff2") format("woff2"),
+    url("/assets/fonts/Rubik-Medium.woff") format("woff"),
+    url("/assets/fonts/Rubik-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src:
+    local("Rubik-Regular"),
+    url("/assets/fonts/Rubik-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Rubik-Regular.woff") format("woff"),
+    url("/assets/fonts/Rubik-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-display: swap;
+}

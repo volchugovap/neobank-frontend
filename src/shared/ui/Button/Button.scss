@@ -1,0 +1,17 @@
+@use "@/shared/styles/fonts";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.btn {
+  border: none;
+  cursor: pointer;
+  color: variables.$white-ffffff;
+  font-family: "Ubuntu-Bold", sans-serif;
+  transition: background-color 0.35s ease;
+  @include mixins.text_size-height-word-letter(16px, 112%, 0, 2%);
+
+  &:hover,
+  &:disabled {
+    background-color: variables.$blue-7796c0;
+  }
+}

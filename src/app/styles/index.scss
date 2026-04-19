@@ -1,0 +1,23 @@
+@use "@/shared/styles/fonts";
+@use "@/shared/styles/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: variables.$black-000000;
+  font-family: "Ubuntu-Medium", sans-serif;
+}
+
+body {
+  background-color: variables.$white-f5f4ff;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}

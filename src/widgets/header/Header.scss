@@ -1,0 +1,45 @@
+@use "@/shared/styles/variables";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/fonts";
+
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mixins.global-padding-desktop;
+
+  &__logo {
+    color: variables.$pink-b4387a;
+    font-family: "Ubuntu-Bold", sans-serif;
+    @include mixins.text_size-height-word-letter(24px, 112%, 0, 2%);
+  }
+
+  &__nav-list {
+    gap: 40px;
+    display: flex;
+  }
+
+  &__nav-link {
+    transition: color 0.35s ease;
+    color: variables.$gray-1d1929;
+    font-family: "Ubuntu-Bold", sans-serif;
+    @include mixins.text_size-height-word-letter(16px, 112px, 0, 2%);
+
+    &:hover {
+      color: variables.$yellow-b2a35f;
+    }
+  }
+
+  &__btn {
+    width: 128px;
+    height: 50px;
+    @include mixins.w-h-padding-radius-bgc(
+      128px,
+      50px,
+      8px,
+      16px,
+      variables.$blue-003cff
+    );
+  }
+}

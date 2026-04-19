@@ -1,0 +1,57 @@
+@use "@/shared/styles/variables";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/fonts";
+
+.input-wrapper {
+  gap: 8px;
+  display: flex;
+  margin-top: 62px;
+  box-shadow: 0 10px 20px 0 variables.$gray-363a781a;
+  @include mixins.w-h-padding-radius-bgc(
+    max-content,
+    90px,
+    23px 32px,
+    20px,
+    variables.$white-ffffff
+  );
+
+  &:focus,
+  &:focus-visible,
+  &:focus-within {
+    outline: 2px solid black;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    color: variables.$gray-9092b0;
+    background-color: transparent;
+    font-family: "NunitoSans-Regular", sans-serif;
+    @include mixins.text_size-height-word-letter(20px, 147%, 2%, 0);
+
+    &::placeholder {
+      color: variables.$gray-9092b0;
+    }
+  }
+
+  &__btn {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    color: variables.$white-ffffff;
+    font-family: "Ubuntu-Bold", sans-serif;
+    transition: background-color 0.35s ease;
+    @include mixins.text_size-height-word-letter(16px, 127%, 0, 0%);
+    @include mixins.w-h-padding-radius-bgc(
+      162px,
+      45px,
+      9px 31px 7px 14px,
+      20px,
+      variables.$violet-686df1
+    );
+
+    & > .btn__icon {
+      margin-bottom: 7px;
+    }
+  }
+}

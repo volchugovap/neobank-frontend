@@ -1,0 +1,44 @@
+@use "@/shared/styles/fonts";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.section-features {
+  display: flex;
+  margin-top: 112px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__text-container {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: "Rubik-Medium", sans-serif;
+    color: variables.$blue-0b132a;
+    @include mixins.text_size-height-word-letter(35px, 50px, 5px, 0%);
+  }
+
+  &__description {
+    color: variables.$gray-4f5665;
+    font-family: "Rubik-Regular", sans-serif;
+    @include mixins.text_size-height-word-letter(16px, 30px, 5px, 0%);
+  }
+
+  &__list-items {
+    gap: 12px;
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+  }
+
+  &__item {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    color: variables.$gray-4f5665;
+    font-family: "Rubik-Regular", sans-serif;
+    @include mixins.text_size-height-word-letter(14px, 30px, 5px, 0%);
+  }
+}

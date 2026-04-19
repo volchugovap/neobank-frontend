@@ -1,0 +1,27 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.section-support {
+  display: flex;
+  align-items: center;
+  margin: 64px 0 98px;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 30px;
+    color: variables.$orange-eb801d;
+    @include mixins.text_size-height-word-letter(24px, 147%, 0, 2%);
+  }
+
+  &__top-paragraph {
+    font-weight: 700;
+    margin-bottom: 27px;
+    color: variables.$black-1c1c1e;
+    @include mixins.text_size-height-word-letter(30px, 120%, 0, 2%);
+  }
+
+  &__bottom-paragraph {
+    color: variables.$black-1c1c1e;
+    @include mixins.text_size-height-word-letter(30px, 147%, 0, 2%);
+  }
+}

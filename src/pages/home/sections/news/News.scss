@@ -1,0 +1,21 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.section-news {
+  display: flex;
+  margin-top: 48px;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 8px;
+    @include mixins.text_size-height-word-letter(30px, 50px, 5px, 0%);
+  }
+
+  &__description {
+    margin-bottom: 46px;
+    color: variables.$gray-2d3748;
+    @include mixins.text_size-height-word-letter(16px, 50px, 5px, 0%);
+  }
+}
