@@ -6,11 +6,10 @@ import {
   ServicesInTheWorld,
   Support,
 } from "./sections";
-import "./HomePage.scss";
 
-export const Home: React.FC = () => {
+export const HomePage: React.FC = () => {
   return (
-    <main className="main">
+    <main>
       <Cards />
       <Features />
       <ExchangeRate />

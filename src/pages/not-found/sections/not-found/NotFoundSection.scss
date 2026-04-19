@@ -1,0 +1,44 @@
+@use "/src/shared/styles/mixins";
+@use "/src/shared/styles/variables";
+
+.not-found-section {
+  display: flex;
+  align-items: center;
+  margin: 24px 0 96px;
+  justify-content: space-between;
+
+  &__left-bar {
+    align-items: start;
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top-text {
+    font-family: "Ubuntu-Bold", sans-serif;
+    @include mixins.text_size-height-word-letter(30px, 112%, 0, 0%);
+  }
+
+  &__title {
+    font-weight: 500;
+    @include mixins.text_size-height-word-letter(30px, 112%, 0, 0%);
+  }
+
+  &__description {
+    color: variables.$gray-4b4b4b;
+    @include mixins.text_size-height-word-letter(16px, 112%, 0, 0%);
+  }
+
+  &__btn {
+    @include mixins.w-h-padding-radius-bgc(
+      192px,
+      40px,
+      8px,
+      8px,
+      variables.$blue-003cff
+    );
+  }
+}
+
+@media (width: 920px) {
+}

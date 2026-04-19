@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Home } from "../../pages/home/HomePage";
+import { HomePage, NotFoundPage } from "../../pages";
 import { MainLayout } from "../layouts/MainLayout";
 
 export const Router: React.FC = () => {
@@ -7,7 +7,8 @@ export const Router: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<HomePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
