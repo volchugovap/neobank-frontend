@@ -19,3 +19,56 @@
     @include mixins.text_size-height-word-letter(16px, 50px, 5px, 0%);
   }
 }
+
+@media (max-width: 1300px) {
+  .section-news {
+    margin-top: 40px;
+
+    &__title {
+      font-size: 28px;
+      line-height: 44px;
+    }
+
+    &__description {
+      font-size: 15px;
+      line-height: 40px;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .section-news {
+    margin-top: 32px;
+    text-align: center;
+
+    &__title {
+      font-size: 26px;
+      line-height: 38px;
+    }
+
+    &__description {
+      font-size: 14px;
+      line-height: 32px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section-news {
+    margin-top: 24px;
+
+    &__title {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    &__description {
+      font-size: 13px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+  }
+}
