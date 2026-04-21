@@ -28,8 +28,7 @@
       variables.$blue-003cff
     );
 
-    &:hover,
-    &:disabled {
+    &:hover {
       background-color: variables.$blue-7796c0;
     }
   }
