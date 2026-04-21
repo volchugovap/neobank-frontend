@@ -1,6 +1,5 @@
 import { Button } from "../../../../shared/ui";
 import "./Cards.scss";
-import "/src/shared/styles/_variables.scss";
 
 interface ILink {
   src: string;
@@ -23,11 +22,18 @@ export const Cards: React.FC = () => {
         <Button className="section-cards__btn">Choose the card</Button>
       </div>
 
-      <figure className="section-cards__cards">
+      <ul className="section-cards__cards" role="list">
         {imagesLink.map(({ src, alt }) => (
-          <img src={src} alt={alt} key={src} />
+          <li key={src} role="listitem">
+            <img
+              src={src}
+              alt={alt}
+              key={src}
+              className="section-cards__card-img"
+            />
+          </li>
         ))}
-      </figure>
+      </ul>
     </section>
   );
 };
