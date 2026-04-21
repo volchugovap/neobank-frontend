@@ -45,6 +45,10 @@
       16px,
       variables.$blue-003cff
     );
+
+    &:hover {
+      background-color: variables.$blue-7796c0;
+    }
   }
 
   &__burger {
