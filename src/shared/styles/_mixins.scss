@@ -2,10 +2,16 @@
   padding: 0 214px;
 }
 
+@mixin global-padding-mini-desktop {
+  padding: 0 150px;
+}
+
 @mixin global-padding-tablet {
+  padding: 0 100px;
 }
 
 @mixin global-padding-mobile {
+  padding: 0 40px;
 }
 
 @mixin w-h-padding-radius-bgc(
