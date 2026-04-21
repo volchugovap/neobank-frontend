@@ -25,3 +25,58 @@
     @include mixins.text_size-height-word-letter(30px, 147%, 0, 2%);
   }
 }
+
+@media (max-width: 1300px) {
+  .section-support {
+    margin: 50px 0 70px;
+
+    &__title {
+      margin-bottom: 24px;
+    }
+
+    &__top-paragraph {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .section-support {
+    text-align: center;
+    margin: 40px 0 60px;
+
+    &__title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__top-paragraph {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    &__bottom-paragraph {
+      font-size: 24px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section-support {
+    margin: 30px 0 40px;
+
+    &__title {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    &__top-paragraph {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    &__bottom-paragraph {
+      font-size: 20px;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 import { Button } from "../../../../../../shared/ui";
 import "./Input.scss";
 
+// interface IInput {
+//   onSubmit: (e: React.FocusEvent) => void;
+// }
+
 export const Input: React.FC = () => {
   return (
     <div role="group" aria-label="input field" className="input-wrapper">
@@ -16,7 +20,7 @@ export const Input: React.FC = () => {
       />
 
       <Button
-        type="button"
+        type="submit"
         className="input-wrapper__btn"
         icon={{ src: "/images/home-page/send.svg", alt: "sent svg" }}
       >

@@ -3,21 +3,18 @@
 @use "@/shared/styles/fonts";
 
 .input-wrapper {
-  gap: 8px;
+  gap: 10px;
+  height: 90px;
   display: flex;
   margin-top: 62px;
+  padding: 23px 32px;
+  align-items: center;
+  border-radius: 20px;
+  background-color: variables.$white-ffffff;
   box-shadow: 0 10px 20px 0 variables.$gray-363a781a;
-  @include mixins.w-h-padding-radius-bgc(
-    max-content,
-    90px,
-    23px 32px,
-    20px,
-    variables.$white-ffffff
-  );
 
-  &:focus,
-  &:focus-visible,
   &:focus-within {
+    outline-offset: 1px;
     outline: 2px solid black;
   }
 
@@ -40,7 +37,6 @@
     align-items: center;
     color: variables.$white-ffffff;
     font-family: "Ubuntu-Bold", sans-serif;
-    transition: background-color 0.35s ease;
     @include mixins.text_size-height-word-letter(16px, 127%, 0, 0%);
     @include mixins.w-h-padding-radius-bgc(
       162px,
@@ -50,8 +46,51 @@
       variables.$violet-686df1
     );
 
-    & > .btn__icon {
+    &:hover {
+      background-color: variables.$blue-7796c0;
+    }
+
+    > img {
       margin-bottom: 7px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .input-wrapper {
+    gap: 10px;
+    padding: 17px 25px;
+    height: max-content;
+
+    &__btn {
+      width: 150px;
+      padding: 9px 20px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 500px), (max-width: 700px) {
+  .input-wrapper {
+    gap: 16px;
+    margin-top: 32px;
+    padding: 20px 16px;
+    border-radius: 16px;
+    flex-direction: column;
+
+    &__image {
+      display: none;
+    }
+
+    &__input {
+      text-align: center;
+    }
+
+    &__btn {
+      width: 80%;
+      height: 45px;
+      padding: 12px 20px;
+      justify-content: center;
     }
   }
 }
