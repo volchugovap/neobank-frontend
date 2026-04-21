@@ -69,8 +69,12 @@ export const Footer: React.FC = () => {
       <nav className="footer__nav" aria-label="Навигация по сайту">
         <ul className="footer__nav-list">
           {navLinks.map(({ path, title }) => (
-            <li className="footer__item" key={path}>
-              <Link to={path} className="footer__nav-link">
+            <li key={path}>
+              <Link
+                to={path}
+                className="footer__nav-link"
+                aria-label="To main page"
+              >
                 {title}
               </Link>
             </li>

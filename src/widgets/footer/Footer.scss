@@ -4,15 +4,20 @@
 
 .footer {
   display: flex;
+  padding-top: 96px;
+  padding-bottom: 92px;
   flex-direction: column;
-  padding: 96px 214px 92px;
   background-color: variables.$white-e7e7e7;
 
   &__top-container {
     display: flex;
     align-items: start;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     justify-content: space-between;
+  }
+
+  &__logo-link {
+    line-height: 0;
   }
 
   &__address {
@@ -22,14 +27,24 @@
 
     &-number {
       font-style: normal;
-      font-family: "Ubuntu-bold", sans-serif;
+      transition: color 0.35s ease;
+      font-family: "Ubuntu-Bold", sans-serif;
       @include mixins.text_size-height-word-letter(30px, 147%, 0, 0%);
+
+      &:hover {
+        color: variables.$yellow-b2a35f;
+      }
     }
 
     &-email {
       font-style: normal;
+      transition: color 0.35s ease;
       color: variables.$gray-2d3748;
       @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+
+      &:hover {
+        color: variables.$yellow-b2a35f;
+      }
     }
   }
 
@@ -39,17 +54,15 @@
 
   &__nav-list {
     display: flex;
+    row-gap: 8px;
     flex-wrap: wrap;
-  }
-
-  &__item {
-    margin-top: 8px;
-    margin-right: 32px;
-    @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+    column-gap: 32px;
   }
 
   &__nav-link {
+    color: inherit;
     transition: color 0.35s ease;
+    @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
 
     &:hover {
       color: variables.$yellow-b2a35f;
@@ -61,5 +74,56 @@
     color: variables.$gray-2d3748;
     border-top: 2px solid variables.$white-fafafa;
     @include mixins.text_size-height-word-letter(16px, 147%, 0, 2%);
+  }
+}
+
+@media (max-width: 1300px) {
+  .footer {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media (max-width: 920px) {
+  .footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__top-container {
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    &__nav-list {
+      gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &__top-container {
+      gap: 20px;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &__address {
+      align-items: center;
+    }
+
+    &__nav-list {
+      gap: 12px;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &__description {
+      text-align: center;
+      padding-top: 24px;
+    }
   }
 }
