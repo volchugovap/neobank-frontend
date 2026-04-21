@@ -26,7 +26,11 @@ export const NotFoundSection: React.FC = () => {
           Go back
         </Button>
       </div>
-      <img src="/images/404.svg" alt="404 image" />
+      <img
+        src="/images/404.svg"
+        alt="404 image"
+        className="not-found-section__image"
+      />
     </section>
   );
 };
