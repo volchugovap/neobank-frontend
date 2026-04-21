@@ -10,7 +10,11 @@ const phrases = [
 export const Features: React.FC = () => {
   return (
     <section className="section-features" aria-labelledby="features__title">
-      <img src="/images/home-page/programmer.svg" alt="programmer" />
+      <img
+        src="/images/home-page/programmer.svg"
+        alt="programmer"
+        className="section-features__img"
+      />
 
       <div className="section-features__text-container">
         <h2 className="section-features__title" id="features__title">
@@ -23,7 +27,11 @@ export const Features: React.FC = () => {
         <ul className="section-features__list-items">
           {phrases.map((el) => (
             <li key={el} className="section-features__item">
-              <img src="/images/home-page/success.svg" alt="check mark" />
+              <img
+                src="/images/home-page/success.svg"
+                alt=""
+                role="presentation"
+              />
               {el}
             </li>
           ))}
