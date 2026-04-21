@@ -3,6 +3,7 @@
 @use "@/shared/styles/fonts";
 
 .header {
+  flex: 1;
   height: 64px;
   display: flex;
   align-items: center;
@@ -16,15 +17,17 @@
   }
 
   &__nav-list {
-    gap: 40px;
+    gap: 3vw;
     display: flex;
+    align-items: center;
   }
 
   &__nav-link {
+    white-space: nowrap;
     transition: color 0.35s ease;
     color: variables.$gray-1d1929;
     font-family: "Ubuntu-Bold", sans-serif;
-    @include mixins.text_size-height-word-letter(16px, 112px, 0, 2%);
+    @include mixins.text_size-height-word-letter(16px, 112%, 0, 2%);
 
     &:hover {
       color: variables.$yellow-b2a35f;
@@ -32,14 +35,96 @@
   }
 
   &__btn {
-    width: 128px;
-    height: 50px;
+    padding: 16px;
+    min-width: 110px;
+    white-space: nowrap;
     @include mixins.w-h-padding-radius-bgc(
-      128px,
+      10vw,
       50px,
       8px,
       16px,
       variables.$blue-003cff
     );
+  }
+
+  &__burger {
+    display: none;
+    font-size: 28px;
+    color: variables.$black-000000;
+  }
+}
+
+@media (max-width: 1300px) {
+  .header {
+    @include mixins.global-padding-mini-desktop;
+
+    &__btn {
+      height: 44px;
+      padding: 10px;
+      min-width: 120px;
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .header {
+    @include mixins.global-padding-tablet;
+
+    &__btn {
+      height: 40px;
+      padding: 8px;
+      min-width: 110px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    @include mixins.global-padding-mobile;
+  }
+}
+
+@media (max-width: 500px), (max-width: 840px) {
+  .header {
+    &__burger {
+      display: block;
+    }
+
+    &__nav {
+      top: 64px;
+      left: 50px;
+      right: 50px;
+      opacity: 0;
+      transition:
+        visibility 0.3s,
+        opacity 0.3s ease,
+        transform 0.3s ease;
+      z-index: 1000;
+      padding: 24px 20px;
+      position: absolute;
+      visibility: hidden;
+      border-radius: 10px;
+      transform: translateY(-150%);
+      background-color: variables.$white-f5f4ff;
+      box-shadow: 0 8px 16px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    &.menu-open &__nav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    &__nav-list {
+      flex-wrap: nowrap;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &__actions {
+      gap: 3vw;
+      display: flex;
+      align-items: center;
+    }
   }
 }
