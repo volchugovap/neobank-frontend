@@ -1,3 +1,38 @@
-# Ignore artifacts:
+# Зависимости
+node_modules
+**/node_modules
+
+# Сборка и кэш
+dist
 build
 coverage
+.cache
+.next
+.nuxt
+.output
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# Конфиги, которые не должны меняться
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+*.min.js
+*.min.css
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Документация (если не хотите форматировать)
+CHANGELOG.md
+*.txt
+
+# Резервные копии
+*.bak
+*.swp
+
+# Папки с отдельным форматированием (например, чужие сниппеты)
+public/vendor
