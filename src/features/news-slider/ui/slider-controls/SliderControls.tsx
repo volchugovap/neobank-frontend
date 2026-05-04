@@ -1,5 +1,5 @@
-import { Button } from "../../../../shared/ui";
-import { ArrowSVGR } from "../../../../shared/ui";
+import { Button } from "../../../../shared";
+import { ArrowSVGR } from "../../../../shared";
 import "./SliderControls.scss";
 
 interface IProps {
