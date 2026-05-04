@@ -1,0 +1,134 @@
+@use "@/shared/styles/fonts";
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.section-benefits {
+	display: flex;
+	margin-top: 112px;
+	gap: 70px;
+	align-items: center;
+	justify-content: space-between;
+
+	&__img {
+		width: 50%;
+	}
+
+	&__text-container {
+		gap: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		font-family: "Rubik-Medium", sans-serif;
+		color: variables.$blue-0b132a;
+		@include mixins.text_size-height-word-letter(35px, 50px, 5px, 0%);
+	}
+
+	&__description {
+		color: variables.$gray-4f5665;
+		font-family: "Rubik-Regular", sans-serif;
+		@include mixins.text_size-height-word-letter(16px, 30px, 5px, 0%);
+	}
+
+	&__list-items {
+		gap: 12px;
+		display: flex;
+		margin-top: 5px;
+		flex-direction: column;
+	}
+
+	&__item {
+		gap: 16px;
+		display: flex;
+		align-items: center;
+		color: variables.$gray-4f5665;
+		font-family: "Rubik-Regular", sans-serif;
+		@include mixins.text_size-height-word-letter(14px, 30px, 5px, 0%);
+
+		img {
+			flex-shrink: 0;
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	.section-benefits {
+		gap: 40px;
+		margin-top: 90px;
+	}
+}
+
+@media (max-width: 920px) {
+	.section-benefits {
+		gap: 48px;
+		margin-top: 70px;
+		text-align: center;
+		flex-direction: column;
+
+		&__img {
+			width: 70%;
+		}
+
+		&__text-container {
+			align-items: center;
+		}
+
+		&__title {
+			font-size: 30px;
+		}
+
+		&__description {
+			max-width: 500px;
+		}
+
+		&__list-items {
+			align-items: flex-start;
+			text-align: left;
+		}
+
+		&__item {
+			justify-content: flex-start;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.section-benefits {
+		gap: 32px;
+		margin-top: 40px;
+		text-align: center;
+		align-items: center;
+		flex-direction: column;
+
+		&__img {
+			display: none;
+		}
+
+		&__text-container {
+			align-items: center;
+			width: 100%;
+		}
+
+		&__title {
+			font-size: 24px;
+			line-height: 32px;
+			text-align: left;
+		}
+
+		&__description {
+			text-align: left;
+		}
+
+		&__list-items {
+			width: 100%;
+			text-align: left;
+			align-items: flex-start;
+		}
+
+		&__item {
+			gap: 12px;
+			justify-content: flex-start;
+		}
+	}
+}
