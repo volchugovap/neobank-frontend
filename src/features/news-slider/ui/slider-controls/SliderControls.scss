@@ -1,0 +1,39 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.slider-controls {
+	gap: 20px;
+	display: flex;
+	justify-content: end;
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: variables.$blue-003cff;
+		border: 1px solid variables.$blue-003cff;
+		@include mixins.w-h-padding-radius-bgc(64px, 64px, 8px, 50px, variables.$blue-003cff);
+
+		&:disabled {
+			cursor: not-allowed;
+			background-color: variables.$white-ffffff;
+		}
+
+		&:hover:not(:disabled) {
+			background-color: variables.$blue-7796c0;
+			border-color: variables.$blue-7796c0;
+		}
+	}
+
+	&__icon {
+		stroke: variables.$white-ffffff;
+
+		&--prev {
+			transform: rotate(180deg);
+		}
+
+		&--disabled {
+			stroke: variables.$black-000000;
+		}
+	}
+}
