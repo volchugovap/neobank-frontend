@@ -1,3 +1,2 @@
-// export type{} from ''
-
-export type { INavLinks } from "./navLinks";
+export type { ExchangeRatesResponse } from "./ExchangeRatesResponse.type";
+export type { INavLinks } from "./NavLink.type";
