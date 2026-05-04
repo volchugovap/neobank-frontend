@@ -1,0 +1,32 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
+.news-card {
+	gap: 32px;
+	display: flex;
+	max-width: 320px;
+	max-height: 450px;
+	align-items: center;
+	flex-direction: column;
+	border: 1px solid variables.$black-00000033;
+	box-shadow: 0 2px 4px 0 variables.$black-00000033;
+	@include mixins.w-h-padding-radius-bgc(320px, 450px, 32px, 28px, variables.$white-ffffff);
+
+	&__img {
+		width: 100%;
+		height: 120px;
+		object-fit: cover;
+	}
+
+	&__title {
+		font-weight: 500;
+		text-align: center;
+		@include mixins.text_size-height-word-letter(20px, 25px, 1px, 0%);
+	}
+
+	&__description {
+		overflow: hidden;
+		text-align: center;
+		@include mixins.text_size-height-word-letter(16px, 23px, 1px, 0%);
+	}
+}

@@ -1,0 +1,14 @@
+.slider {
+	gap: 48px;
+	display: flex;
+	max-width: 99%;
+	overflow: hidden;
+	position: relative;
+	flex-direction: column;
+
+	&__track {
+		gap: 80px;
+		display: flex;
+		transition: transform 0.3s ease;
+	}
+}
