@@ -3,6 +3,7 @@
 
 .slider {
 	gap: 48px;
+	width: 100%;
 	display: flex;
 	max-width: 99%;
 	overflow: hidden;
@@ -16,7 +17,8 @@
 	}
 
 	&__loader {
-		border: 1px solid variables.$black-00000033;
-		@include mixins.w-h-padding-radius-bgc(320px, 450px, 32px, 28px, variables.$white-e7e7e7);
+		@include mixins.w-h-padding-radius-bgc(100%, 450px, 0, 0, variables.$gray-bbbbbb33);
+		border-top-left-radius: 28px;
+		border-bottom-left-radius: 28px;
 	}
 }

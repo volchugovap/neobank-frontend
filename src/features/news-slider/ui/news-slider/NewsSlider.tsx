@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useNewsList } from "../../hooks/useNewsList";
 import { NewsCard } from "../../../../entities";
 import { SliderControls } from "../slider-controls/SliderControls";
-import { LoaderCard } from "../../../../shared";
+import { SliderLoader } from "../../../../shared";
 import "./NewsSlider.scss";
 
 const STEP = 500;
@@ -27,35 +27,31 @@ export const NewsSlider: React.FC = () => {
 
 	return (
 		<div className="slider" ref={containerRef} aria-label="news slider" role="region">
-			<ul
-				className="slider__track"
-				ref={trackRef}
-				role="list"
-				style={{
-					transform: `translateX(-${offset}px)`,
-				}}
-			>
-				{isLoading && (
-					<li>
-						<LoaderCard className="slider__loader" />
-					</li>
-				)}
-
-				{news.map((item) => (
-					<li key={item.title} className="slider__item" role="listitem">
-						{!isLoading && <NewsCard article={item} key={item.title} />}
-					</li>
-				))}
-			</ul>
+			{isLoading && <SliderLoader className="slider__loader" />}
 
 			{!isLoading && (
-				<SliderControls
-					onPrev={handlePrev}
-					onNext={handleNext}
-					disablePrev={offset === 0}
-					disableNext={offset >= maxOffset}
-				/>
+				<ul
+					className="slider__track"
+					ref={trackRef}
+					role="list"
+					style={{
+						transform: `translateX(-${offset}px)`,
+					}}
+				>
+					{news.map((item) => (
+						<li key={item.title} className="slider__item" role="listitem">
+							<NewsCard article={item} key={item.title} />
+						</li>
+					))}
+				</ul>
 			)}
+
+			<SliderControls
+				onPrev={handlePrev}
+				onNext={handleNext}
+				disablePrev={offset === 0}
+				disableNext={offset >= maxOffset}
+			/>
 		</div>
 	);
 };

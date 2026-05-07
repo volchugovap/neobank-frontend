@@ -1,11 +1,12 @@
 @use "@/shared/styles/variables";
 
-.loader-card {
+.loader-container {
+	width: 100%;
 	position: relative;
 	overflow-x: hidden;
 }
 
-.loader-card::before {
+.loader-container::before {
 	content: "";
 	top: 0;
 	left: -100%;
@@ -14,7 +15,7 @@
 	position: absolute;
 	transform: skewX(-20deg);
 	animation: shimmer 2.5s infinite;
-	background: linear-gradient(120deg, transparent, variables.$gray-bbbbbb33, transparent);
+	background: linear-gradient(120deg, transparent, variables.$gray-363a781a, transparent);
 }
 
 @keyframes shimmer {
