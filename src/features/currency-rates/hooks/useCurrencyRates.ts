@@ -2,22 +2,23 @@ import { useCallback, useEffect, useState } from "react";
 import { currencyApi } from "../../../entities";
 import { type ExchangeRatesResponse } from "../../../shared";
 
-type UseCurrencyRatesOptions = {
+interface UseCurrencyRatesOptions {
 	baseCurrency?: string;
 	targetCurrencies?: string[];
 	refreshIntervalMs?: number;
-};
+}
 
 export const useCurrencyRates = ({
 	baseCurrency,
 	targetCurrencies,
-	refreshIntervalMs = 900000,
+	refreshIntervalMs = 15 * 60 * 1000,
 }: UseCurrencyRatesOptions = {}) => {
 	const [data, setData] = useState<ExchangeRatesResponse | null>(null);
 	const [isLoading, setIsLoading] = useState(true);
 
 	const fetchRates = useCallback(async () => {
 		setIsLoading(true);
+
 		try {
 			const result = await currencyApi.getRates(baseCurrency);
 			setData(result);
