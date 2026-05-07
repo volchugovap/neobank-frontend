@@ -1,3 +1,6 @@
+@use "@/shared/styles/mixins";
+@use "@/shared/styles/variables";
+
 .slider {
 	gap: 48px;
 	display: flex;
@@ -10,5 +13,10 @@
 		gap: 80px;
 		display: flex;
 		transition: transform 0.3s ease;
+	}
+
+	&__loader {
+		border: 1px solid variables.$black-00000033;
+		@include mixins.w-h-padding-radius-bgc(320px, 450px, 32px, 28px, variables.$white-e7e7e7);
 	}
 }

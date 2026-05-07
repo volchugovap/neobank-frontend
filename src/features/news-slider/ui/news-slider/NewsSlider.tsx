@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useNewsList } from "../../hooks/useNewsList";
 import { NewsCard } from "../../../../entities";
 import { SliderControls } from "../slider-controls/SliderControls";
-
+import { LoaderCard } from "../../../../shared";
 import "./NewsSlider.scss";
 
 const STEP = 500;
@@ -25,8 +25,6 @@ export const NewsSlider: React.FC = () => {
 		setOffset((prev) => Math.max(prev - STEP, 0));
 	};
 
-	if (isLoading) return <div>Loading...</div>;
-
 	return (
 		<div className="slider" ref={containerRef} aria-label="news slider" role="region">
 			<ul
@@ -37,19 +35,27 @@ export const NewsSlider: React.FC = () => {
 					transform: `translateX(-${offset}px)`,
 				}}
 			>
+				{isLoading && (
+					<li>
+						<LoaderCard className="slider__loader" />
+					</li>
+				)}
+
 				{news.map((item) => (
 					<li key={item.title} className="slider__item" role="listitem">
-						<NewsCard article={item} key={item.title} />
+						{!isLoading && <NewsCard article={item} key={item.title} />}
 					</li>
 				))}
 			</ul>
 
-			<SliderControls
-				onPrev={handlePrev}
-				onNext={handleNext}
-				disablePrev={offset === 0}
-				disableNext={offset >= maxOffset}
-			/>
+			{!isLoading && (
+				<SliderControls
+					onPrev={handlePrev}
+					onNext={handleNext}
+					disablePrev={offset === 0}
+					disableNext={offset >= maxOffset}
+				/>
+			)}
 		</div>
 	);
 };
