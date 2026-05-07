@@ -10,7 +10,7 @@ export const useNewsList = (count: number = 20) => {
 		setIsLoading(true);
 
 		try {
-			const response = await newsApi.getNews(count);
+			const response = await newsApi.getNews({ pageSize: count });
 			setNews(response.articles);
 		} catch (err) {
 			console.error(err);

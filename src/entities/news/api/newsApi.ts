@@ -1,16 +1,21 @@
-import type { NewsApiResponse } from "../types/news.types";
 import { baseAPI } from "../../../shared";
+import type { NewsApiResponse, IGetNews } from "../types";
+import { filterByImageUrl, filterByMarkup } from "../lib";
 
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
 const BASE_URL = "https://newsapi.org/v2/top-headlines";
 
 export const newsApi = {
-	async getNews(pageSize: number = 20): Promise<NewsApiResponse> {
+	async getNews({
+		pageSize = 20,
+		country = "us",
+		apiKey = API_KEY,
+	}: IGetNews): Promise<NewsApiResponse> {
 		try {
 			const response = await baseAPI<NewsApiResponse>(BASE_URL, {
-				pageSize: pageSize,
-				country: "us",
-				apiKey: API_KEY,
+				pageSize,
+				country,
+				apiKey,
 			});
 
 			if (response.status !== "ok") {
@@ -18,7 +23,10 @@ export const newsApi = {
 			}
 
 			const filteredArticles = response.articles.filter(
-				(a) => a.urlToImage && a.title && a.description && a.urlToImage,
+				(a) =>
+					filterByMarkup(a.title) &&
+					filterByMarkup(a.description) &&
+					filterByImageUrl(a.urlToImage),
 			);
 
 			return { ...response, articles: filteredArticles };
