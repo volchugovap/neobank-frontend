@@ -22,12 +22,22 @@ export const newsApi = {
 				throw new Error(response.message || "NewsAPI returned an error");
 			}
 
-			const filteredArticles = response.articles.filter(
-				(a) =>
-					filterByMarkup(a.title) &&
-					filterByMarkup(a.description) &&
-					filterByImageUrl(a.urlToImage),
+			const articlesWithFlags = await Promise.all(
+				response.articles.map(async (article) => {
+					const titleOk = filterByMarkup(article.title);
+					const descOk = filterByMarkup(article.description);
+					const imageOk = await filterByImageUrl(article.urlToImage);
+
+					return {
+						article,
+						isValid: imageOk && descOk && titleOk,
+					};
+				}),
 			);
+
+			const filteredArticles = articlesWithFlags
+				.filter((item) => item.isValid)
+				.map((item) => item.article);
 
 			return { ...response, articles: filteredArticles };
 		} catch (error) {

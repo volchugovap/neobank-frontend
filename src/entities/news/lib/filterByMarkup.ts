@@ -24,5 +24,5 @@ function isMarkdown(text: string) {
 export function filterByMarkup(str: string) {
 	if (!str || !str.trim()) return false;
 
-	return isHtml(str) && isMarkdown(str);
+	return !isHtml(str) || !isMarkdown(str);
 }

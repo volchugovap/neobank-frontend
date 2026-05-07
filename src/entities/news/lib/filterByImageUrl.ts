@@ -1,11 +1,11 @@
-export function filterByImageUrl(url: string) {
+export function filterByImageUrl(url: string): Promise<boolean> {
 	if (!url) return Promise.resolve(false);
 
 	return new Promise((resolve) => {
 		const img = new Image();
 		const timeoutId = setTimeout(() => {
 			resolve(false);
-		}, 3000);
+		}, 5000);
 
 		img.onload = () => {
 			clearTimeout(timeoutId);
