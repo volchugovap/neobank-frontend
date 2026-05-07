@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { useCurrencyRates } from "../../../../features";
-import { Loader } from "../../../../shared/ui";
+import { RoundLoader } from "../../../../shared/ui";
 import "./ExchangeRate.scss";
 
 const CURRENCIES: string[] = ["USD", "EUR", "RUB", "CNY", "TRY", "CHF"];
@@ -8,7 +8,6 @@ const CURRENCIES: string[] = ["USD", "EUR", "RUB", "CNY", "TRY", "CHF"];
 export const ExchangeRate: React.FC = () => {
 	const { rates, isLoading } = useCurrencyRates({
 		baseCurrency: "RUB",
-		refreshIntervalMs: 1000 * 60 * 15,
 		targetCurrencies: CURRENCIES,
 	});
 
@@ -38,9 +37,8 @@ export const ExchangeRate: React.FC = () => {
 							<li key={code} className="converter__currency-item">
 								<span className="converter__currency-name">{code}:</span>
 
-								{isLoading ? (
-									<Loader />
-								) : (
+								{isLoading && <RoundLoader />}
+								{!isLoading && (
 									<span className="converter__currency-value">
 										{rates?.[code] ? (1 / rates[code]).toFixed(2) : "—"}
 									</span>
