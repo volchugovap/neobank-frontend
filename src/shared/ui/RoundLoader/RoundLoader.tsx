@@ -1,7 +1,7 @@
 import "./RoundLoader.scss";
 import { TbLoaderQuarter } from "react-icons/tb";
 
-export const Loader: React.FC = () => {
+export const RoundLoader: React.FC = () => {
 	return (
 		<span className="round-loader">
 			<TbLoaderQuarter />
